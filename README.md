@@ -30,7 +30,7 @@
 
 * snowflake 算法
   * [JavaScript](./src/snowflake/snowflake.ts)
-  * [golng](./golang/snowflake/snowflake.go)
+  * [golang](./golang/snowflake/snowflake.go)
 
 ### 限流
 
