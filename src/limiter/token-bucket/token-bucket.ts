@@ -1,4 +1,4 @@
-//Rate Limiter
+// Rate Limiter
 
 interface TokenBucketConfig {
   capacity?: number;
@@ -13,7 +13,7 @@ const defaultTokenBucketConfig: TokenBucketConfig = {
 /**
  * 令牌桶-限流
  */
-class TokenBucket {
+export class TokenBucket {
   private lastTme: number;
   private availableTokens: number;
   private quantum: number;

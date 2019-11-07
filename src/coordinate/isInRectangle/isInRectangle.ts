@@ -72,7 +72,7 @@ export const isInRectangle = (
     const DB = { X: D.X - B.X, Y: D.Y - B.Y };
     const AC = { X: A.X - C.X, Y: A.Y - C.Y };
     const CA = { X: C.X - A.X, Y: C.Y - A.Y };
-    const ZERO = 1 * Math.pow(10, -9);
+    const ZERO = Math.pow(10, -9);
     return (
       vectorProduct(AC, AD) * vectorProduct(BC, BD) <= ZERO &&
       vectorProduct(CA, CB) * vectorProduct(DA, DB) <= ZERO

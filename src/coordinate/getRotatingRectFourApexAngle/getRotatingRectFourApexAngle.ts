@@ -1,5 +1,5 @@
 /**
- * 计算正方形 选择后的四个顶角的坐标
+ * 计算正方形 旋转后的四个顶角的坐标
  * @param iWidth
  * @param iHeight
  * @param X

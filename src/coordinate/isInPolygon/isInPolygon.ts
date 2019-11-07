@@ -9,7 +9,7 @@ export const isInPolygon = (
 ): boolean => {
   let counter = 0;
   let i;
-  let xinters;
+  let xterm;
   let p1, p2;
   const pointCount = polygonPoints.length;
   p1 = polygonPoints[0];
@@ -22,10 +22,10 @@ export const isInPolygon = (
     ) {
       if (checkPoint[1] <= Math.max(p1[1], p2[1])) {
         if (p1[0] != p2[0]) {
-          xinters =
+          xterm =
             ((checkPoint[0] - p1[0]) * (p2[1] - p1[1])) / (p2[0] - p1[0]) +
             p1[1];
-          if (p1[1] == p2[1] || checkPoint[1] <= xinters) {
+          if (p1[1] == p2[1] || checkPoint[1] <= xterm) {
             counter++;
           }
         }
@@ -33,9 +33,5 @@ export const isInPolygon = (
     }
     p1 = p2;
   }
-  if (counter % 2 == 0) {
-    return false;
-  } else {
-    return true;
-  }
+  return counter % 2 != 0;
 };

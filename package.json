@@ -3,9 +3,8 @@
   "version": "1.0.2",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage ",
-    "show-coverage": " open ./coverage/lcov-report/index.html",
-    "docs": "typedoc --out docs ./src",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage",
     "precommit": "pretty-quick --staged",
     "format": "npx prettier --write '**/*.{ts,js,md}'",
     "commit": "git-cz",
@@ -13,7 +12,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -p"
   },
   "author": "hukun",
-  "license": "ISC",
+  "license": "MIT",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -30,8 +29,6 @@
     "{src,test}/**/*.{ts,tsx}": [
       "npm run lint",
       "prettier --write",
-      "npm test",
-      "npm run docs",
       "git add"
     ]
   },

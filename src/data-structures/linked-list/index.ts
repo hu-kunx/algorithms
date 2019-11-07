@@ -1,78 +1,68 @@
-import { LinkedListNode } from './LinkedListNode';
+interface LinkedListNode<T> {
+  next: LinkedListNode<T> | null;
+  prev: LinkedListNode<T> | null;
+  value: T;
+}
 
-export class LinkedList {
-  private head: {
-    next: any;
-    value: any;
-  };
-  private tail: {
-    value: any;
-    next: any;
-  };
-
-  public constructor() {
-    this.head = null;
-    this.tail = null;
-  }
+export class LinkedList<T> {
+  private head: LinkedListNode<T> = null;
+  private tail: LinkedListNode<T> = null;
 
   /**
    * 向链表中新增一个元素
    * @param value
    */
-  public append(value: any): {} {
-    const newNode = new LinkedListNode(value);
-    if (!this.head) {
+  public append(value: T): void {
+    const newNode = this.createNode(value);
+    if (this.head === null) {
       this.head = newNode;
-      this.tail = newNode;
-      return this;
+      return;
     }
-
-    this.tail.next = newNode;
-    this.tail = newNode;
-    return this;
+    let node = this.head;
+    while (node.next !== null) {
+      node = node.next;
+    }
+    node.next = newNode;
+    newNode.prev = node;
   }
 
   /**
    * 删除一个元素
    * @param value
    */
-  public delete(value: any): any {
+  public delete(value: T): boolean {
     if (!this.head) {
-      return null;
-    }
-    let deleteNode: {} = null;
-    while (this.head && value === this.head.value) {
-      deleteNode = this.head;
-      this.head = this.head.next;
+      return false;
     }
 
-    let currentNode = this.head;
+    let node = this.head;
+    while (node.value !== value) {
+      if (node.next === null) {
+        break;
+      }
+      node = node.next;
+    }
 
-    if (currentNode !== null) {
-      while (currentNode.next) {
-        if (value === currentNode.next.value) {
-          deleteNode = currentNode.next;
-          currentNode = currentNode.next.next;
-        } else {
-          currentNode = currentNode.next;
-        }
+    if (node.value === value) {
+      const prev = node.prev;
+      const next = node.next;
+      if (next !== null) {
+        prev.next = next;
+        next.prev = prev;
+      } else {
+        prev.next = null;
+        this.tail = prev;
       }
     }
 
-    if (this.tail.value === value) {
-      this.tail.value = currentNode;
-    }
-
-    return deleteNode;
+    return false;
   }
 
-  public find(value: any, callback?: (value: any) => void): {} {
+  public find(value: T, callback?: (value: T) => void): {} {
     if (!this.head) {
       return null;
     }
-
     let currentNode = this.head;
-
     while (currentNode) {
       if (value !== undefined && value === currentNode.value) {
         if (callback) {
@@ -80,18 +70,17 @@ export class LinkedList {
         }
         return currentNode;
       }
-
       currentNode = currentNode.next;
     }
     return null;
   }
 
-  public deleteTail(): any {
+  public deleteTail(): T {
     if (this.head === this.tail) {
       const deletedTail = this.tail;
       this.head = null;
       this.tail = null;
-      return deletedTail;
+      return deletedTail.value;
     }
     const deletedTail = this.tail;
     let currentNode = this.head;
@@ -103,39 +92,38 @@ export class LinkedList {
       }
     }
     this.tail = currentNode;
-    return deletedTail;
+    return deletedTail.value;
   }
 
-  public deleteHead(): any {
+  public deleteHead(): T {
     if (!this.head) {
       return null;
     }
-
     const deletedHead = this.head;
-
     if (this.head.next) {
       this.head = this.head.next;
     } else {
       this.head = null;
       this.tail = null;
     }
-
-    return deletedHead;
+    return deletedHead.value;
   }
 
-  public toArray(): any[] {
-    const nodes = [];
+  public toArray(): T[] {
+    const nodes: T[] = [];
     let currentNode = this.head;
-    while (currentNode) {
-      nodes.push(currentNode);
+    while (currentNode !== null) {
+      nodes.push(currentNode.value);
       currentNode = currentNode.next;
     }
     return nodes;
   }
 
-  public toString(callback?: Function): string {
-    return this.toArray()
-      .map(node => node.toString(callback))
-      .toString();
+  private createNode(value: T): LinkedListNode<T> {
+    return {
+      next: null,
+      prev: null,
+      value,
+    };
   }
 }

@@ -69,7 +69,6 @@ export const PointToLineDistance = (
 
   if (a < b) {
     // 如果直线段AB是水平线。得到直线段AB的弧度
-
     if (y1 === y2) {
       if (x1 < x2) {
         ang1 = 0;
@@ -82,38 +81,29 @@ export const PointToLineDistance = (
       if (m - 1 > 0.00001) {
         m = 1;
       }
-
       ang1 = Math.acos(m);
 
       if (y1 > y2) {
         ang1 = Math.PI * 2 - ang1;
       } // 直线(x1,y1)-(x2,y2)与折X轴正向夹角的弧度
     }
-
     m = (xx - x1) / a;
-
     if (m - 1 > 0.00001) {
       m = 1;
     }
-
     ang2 = Math.acos(m);
 
     if (y1 > yy) {
       ang2 = Math.PI * 2 - ang2;
     } // 直线(x1,y1)-(xx,yy)与折X轴正向夹角的弧度
-
     ang = ang2 - ang1;
-
     if (ang < 0) {
       ang = -ang;
     }
-
     if (ang > Math.PI) {
       ang = Math.PI * 2 - ang;
     }
-
     // 如果是钝角则直接返回距离
-
     if (ang > Math.PI / 2) {
       return [
         a,
@@ -124,9 +114,7 @@ export const PointToLineDistance = (
         },
       ];
     }
-
     // 返回距离并且求得当前距离所在线段的坐标
-
     if (x1 === x2) {
       return [
         b * Math.sin(ang),

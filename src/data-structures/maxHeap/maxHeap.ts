@@ -4,10 +4,10 @@ export class MaxHeap {
   public constructor(list?: number[]) {
     list = list || [];
     this.data = [...list];
-    this.siftdown();
+    this.siftDown();
   }
 
-  public siftup(i: number): void {
+  public siftUp(i: number): void {
     let k = i;
     while (k >= 0) {
       const pater = Math.floor(k / 2);
@@ -20,14 +20,14 @@ export class MaxHeap {
     }
   }
 
-  public siftdown(): void {
+  public siftDown(): void {
     const len = this.data.length;
     for (let i = Math.floor(len / 2); i >= 0; i--) {
-      this.heapify(i, len);
+      this.adjust(i, len);
     }
   }
 
-  public heapify(i: number, length: number): void {
+  public adjust(i: number, length: number): void {
     const temp = this.data[i];
     for (let k = 2 * i + 1; k <= length; k = 2 * k + 1) {
       if (k + 1 < length && this.data[k] < this.data[k + 1]) {
@@ -46,20 +46,20 @@ export class MaxHeap {
   public push(ele: number): number {
     this.data.push(ele);
     const len = this.data.length;
-    this.siftup(len - 1);
+    this.siftUp(len - 1);
     return len;
   }
 
   public del(): number {
     const temp = this.data.splice(0, 1)[0];
-    this.siftdown();
+    this.siftDown();
     return temp;
   }
 
   public sort(): void {
     for (let i = this.data.length - 1; i >= 0; i--) {
       this.swap(0, i);
-      this.heapify(0, i);
+      this.adjust(0, i);
     }
   }
 

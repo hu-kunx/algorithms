@@ -25,11 +25,11 @@ export function decimalBigNumberAdd(...nums: (number | string)[]): string {
   queue.push([getValue(), 0]);
   const result = [];
   while (queue.length > 0) {
-    const [calcs, digits] = queue.shift();
+    const [calc, digits] = queue.shift();
     const rest =
-      calcs.reduce((s, c) => (s += typeof c === 'number' ? c : 0), 0) + digits;
+      calc.reduce((s, c) => (s += typeof c === 'number' ? c : 0), 0) + digits;
     const newDigits = ~~(rest / 10);
-    if (calcs.every(item => typeof item === 'undefined') && digits === 0) {
+    if (calc.every(item => typeof item === 'undefined') && digits === 0) {
       break;
     }
     result.push(rest % 10);

@@ -1,2 +1,3 @@
 **/*.test.ts
+# snowflake.ts 使用了 bigInt eslint 不能识别
 snowflake.ts

@@ -9,7 +9,7 @@ const defaultLeakyBucketConfig: LeakyBucketConfig = {
 /**
  * 漏桶算法-限流
  */
-class LeakyBucket {
+export class LeakyBucket {
   // 漏水的速率
   private rate: number;
   // 入水的速率
