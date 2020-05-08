@@ -4,5 +4,5 @@ module.exports = {
   },
   // testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   testRegex: './src/.*.test.ts$',
-  moduleFileExtensions: ['ts'],
+  moduleFileExtensions: ['ts',"js"],
 };
