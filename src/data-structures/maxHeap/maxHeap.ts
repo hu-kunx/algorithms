@@ -1,3 +1,10 @@
+/**
+ * @description
+ * @author hukun
+ * @date 2019-12-31
+ * @export
+ * @class MaxHeap
+ */
 export class MaxHeap {
   private data: number[];
 

@@ -1,7 +1,6 @@
 import { MergeSort } from './mergeSort';
 import { CreateSortData } from '../sort_data';
 import { isOrderly } from '../check';
-
 describe('归并', () => {
   test('传入空数组', () => {
     expect(MergeSort([])).toEqual([]);
