@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "sourceMap": false,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "lib": [
+      "ES2020.BigInt",
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
