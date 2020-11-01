@@ -1,6 +1,6 @@
-import { SelectSort } from './selectSort';
-import { CreateSortData } from '../sort_data';
-import { isOrderly } from '../check';
+import { CreateSortData } from '../../src/testing/sort_data';
+import { SelectSort } from '../../src/sort/select_sort';
+import { isOrderly } from '../../src/testing/check';
 
 describe('选择', () => {
   test('倒序-->正序', () => {

@@ -1,7 +1,7 @@
 {
   "name": "algorithms",
   "version": "1.0.2",
-  "main": "index.js",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage",
@@ -37,7 +37,7 @@
     "pretty-quick": "^1.11.1",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.9.7"
   },
   "dependencies": {}
 }

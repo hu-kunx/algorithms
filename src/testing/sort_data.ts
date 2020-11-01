@@ -1,4 +1,4 @@
-import { Shuffle } from '../shuffle/FisherYates/fisherYates';
+import { Shuffle } from '../shuffle/fisherYates';
 
 /**
  * 生成随机的指定长度的混乱无重复的数组

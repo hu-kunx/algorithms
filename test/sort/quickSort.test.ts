@@ -1,6 +1,7 @@
-import { QuickSort, mid } from './quickSort';
-import { CreateSortData } from '../sort_data';
-import { isOrderly } from '../check';
+import { QuickSort, mid } from '../../src/sort/quick_sort';
+
+import { CreateSortData } from '../../src/testing/sort_data';
+import { isOrderly } from '../../src/testing/check';
 
 describe('快排', () => {
   test('倒序-->正序', () => {

@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "target": "esnext",
+    "esModuleInterop": true,
     "sourceMap": false,
     "noImplicitAny": true,
     "removeComments": true,
     "lib": [
-      "ES2020.BigInt",
+      "esnext.bigint"
     ]
   },
   "exclude": [
