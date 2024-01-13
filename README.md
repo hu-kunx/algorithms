@@ -1,4 +1,6 @@
 # algorithms
+[![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/huk10/algorithms/blob/master/LICENSE)
+
 
 ## Todos
 
