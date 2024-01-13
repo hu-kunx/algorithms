@@ -17,6 +17,3 @@ build
 *.ntvs*
 *.njsproj
 *.sln
-
-
-rust/target
