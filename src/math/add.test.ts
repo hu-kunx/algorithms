@@ -1,4 +1,4 @@
-import { decimalBigNumberAdd as add } from '../../src/math/add';
+import { decimalBigNumberAdd as add } from './add';
 
 describe('Add', () => {
   test('add("1",2323) === "2324"', () => {

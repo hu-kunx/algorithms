@@ -2,7 +2,7 @@
  * 用于检测数组的正反序
  * @param slice 数组
  * @param kind 正序还是反序
- * @see 使用双指针两年判断
+ * @see 使用双指针两端判断
  */
 export function isOrderly(slice: number[], kind: 1 | -1): boolean {
   const l = slice.length;

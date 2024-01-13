@@ -1,6 +1,6 @@
-import { CreateSortData } from '../../src/testing/sort_data';
-import { insertSort } from '../../src/sort/insert_sort';
-import { isOrderly } from '../../src/testing/check';
+import { CreateSortData } from '../test-lib/sort_data';
+import { insertSort } from './insert';
+import { isOrderly } from '../test-lib/check';
 
 describe('插入', () => {
   test('倒序-->正序', () => {

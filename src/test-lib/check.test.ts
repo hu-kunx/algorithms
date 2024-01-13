@@ -1,4 +1,4 @@
-import { isOrderly } from '../../src/testing/check';
+import { isOrderly } from './check';
 
 describe('排序检查', () => {
   test('正序', () => {
