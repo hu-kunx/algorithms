@@ -1,5 +1,12 @@
 # algorithms
 
+## Todos
+
+- [ ] 从 jest 切换到 vitest
+- [ ] 从 TypeScript 切换至 JavaScript，仅提供 type.d.ts 文件
+- [ ] 测试用例完善
+- [ ] 包装成库
+
 ## 排序算法
 
 - [冒泡排序](src/sort/bubbling.ts)
